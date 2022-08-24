@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import API_PATHS from "constants/apiPaths";
 import ProductsTable from "components/pages/admin/PageProductImport/components/ProductsTable";
@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PageProductImport() {
   const classes = useStyles();
+  useEffect(() => {
+    localStorage.setItem('apiToken', 'TEST_PASSWORD');
+  }, []);
 
   return (
     <div className={classes.content}>
